@@ -11,6 +11,8 @@ GitHub: https://github.com/erc-nextflow/3D-GAN
 	-> codes for each case to train the network using tensorflow
 	-> codes for each case to estimate the flow using a trained model
 	-> code 'matfileconverter.py' to conver the estimation output (.npy) into matlab files (.mat)
+   Set the variable 'root_folder' in the last lines of the codes accordingly with the location of the folders 'models' and/or 'tfrecords'.
+   In codes for estimation, select the architecture and the checkpoint according to the files in folder 'models'.
 
 -> FOLDER 'channel coordinates' contains:
 	-> files 'coordX.npy', 'coordY.npy' an 'coordZ.npy'. These files may be useful to reconstruct the geometry of the channel.
@@ -36,4 +38,5 @@ ZENODO REPOSITORY: https://doi.org/10.5281/zenodo.11090713
 	-> 'scaling.npz' file, needed for training and testing
 	-> 'train' folder with training/validation dataset. 10 files are included in this repository due to storage restrictions. If more samples were needed, data can be shared upon request.
 	-> 'test' folder with testing dataset. 4000 samples. 
+
 	
