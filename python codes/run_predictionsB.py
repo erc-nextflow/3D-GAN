@@ -73,7 +73,7 @@ def main():
     error_v = np.mean((y_target[:,:,:,:,1]-y_predic[:,:,:,:,1])**2, axis=(0,1,3))
     error_w = np.mean((y_target[:,:,:,:,2]-y_predic[:,:,:,:,2])**2, axis=(0,1,3))
     
-    X, Y, Z = read_channel_mesh_bin(path, NX, NY, NZ, LX, LZ)
+    X, Y, Z = read_channel_mesh_bin(NX, NY, NZ, LX, LZ)
     #print(NX, NY, NZ)
     #print(X.shape, Y.shape, Z.shape)
     #print(Y)
@@ -1038,10 +1038,10 @@ def tf_parser(rec, root_folder):
     return wall, flow[:,0:48,:,:]
 
 
-def read_channel_mesh_bin(path, NX, NY, NZ, LX, LZ):
+def read_channel_mesh_bin(NX, NY, NZ, LX, LZ):
 
     X = np.arange(NX) * LX / NX
-    Y = np.fromfile(f'{path}mesh.bin', dtype='double') + 1
+    Y = np.load('coordY.npy')
     Z = np.arange(NZ) * LZ / NZ
     
     return X, Y, Z
@@ -1060,7 +1060,6 @@ if __name__ == '__main__':
     learning_rate = 1e-4
     model_name = 'architecture-B04'
     root_folder = '/    /'
-    path = '/   /'
     GLOBAL_BATCH_SIZE = 1
     BATCH_SIZE_PER_REPLICA = 4
 
