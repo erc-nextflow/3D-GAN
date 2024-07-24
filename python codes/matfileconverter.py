@@ -13,12 +13,6 @@ def read_channel_mesh_bin(path, NX, NY, NZ, LX, LZ):
     
     return X, Y, Z
 
-#x_target = np.load('x_target_test.npy')
-#data = {'target': x_target}
-##savemat('/STORAGE01/acuellar/gan3d/matlabmatrices/matlabmatrix_wall.mat', data)
-#savemat('x_target_test.mat', data)
-#sys.exit()
-
 case = 'A03'
 root = '/   /'
 filename = root + 'y_predic' + case + '.npy', root + 'y_target' + case + '.npy'
